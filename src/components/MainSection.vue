@@ -95,7 +95,7 @@ section {
 
   img {
     height: 360px;
-    filter: brightness(50%);
+    filter: brightness(80%);
     object-fit: fill;
   }
 
@@ -174,6 +174,7 @@ section {
 
     picture,
     img {
+      object-fit: cover;
       height: 100%;
     }
   }

@@ -27,7 +27,7 @@ import { ref } from "vue";
 
 let showModal = ref(false);
 let infoToShow = ref();
-let title = ref("El Mundo de jacques");
+let title = ref("Jacques Madjar");
 
 function openModal(event) {
   infoToShow = event;
