@@ -1,6 +1,6 @@
 <template>
   <div class="header row d-flex">
-    <h1 class="header__title col-12 text-center p-3">{{ title }}</h1>
+    <h1 class="header__title col-12 text-center pt-3 px-2">{{ title }}</h1>
   </div>
 </template>
 
