@@ -8,13 +8,13 @@ export const imageText = [
   {
     lineOne: "Musiques et",
     lineTwo: "contes",
-    mobile: "m2.jpg",
+    mobile: "m3.jpg",
     desktop: "d2.jpg",
   },
   {
     lineOne: "Presentation",
     lineTwo: "",
-    mobile: "m3.jpg",
+    mobile: "m2.jpg",
     desktop: "d5.jpg",
   },
   {

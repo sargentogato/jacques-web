@@ -2,8 +2,8 @@
   <section class="row">
     <div
       class="imageBox col-12 col-md gap-0 p-0"
-      :class="imageText.lineOne"
-      v-for="imageText in props.imageText"
+      v-for="(imageText, index) in props.imageText"
+      :key="index"
     >
       <picture class="imageBox__picture">
         <source
@@ -11,13 +11,21 @@
           :srcset="getImage(imageText.desktop)"
         />
         <source media="(min-width:0px)" :srcset="getImage(imageText.mobile)" />
-        <img :src="getImage(imageText.desktop)" alt="" />
+        <img
+          :src="getImage(imageText.desktop)"
+          alt=""
+          :style="{ animationDelay: `${index * 0.5}s` }"
+          class="fade-in"
+        />
       </picture>
 
       <a
         @click="addModal(imageText.lineOne)"
-        class="imageBox__link"
+        class="imageBox__link slide-in"
         :class="imageText.lineOne"
+        :style="{
+          animationDelay: `${index * 0.7}s`,
+        }"
       >
         <p class="imageBox__text mb-0">{{ imageText.lineOne }}</p>
         <p class="imageBox__text mb-0">{{ imageText.lineTwo }}</p>
@@ -69,12 +77,10 @@ a {
 .imageBox {
   align-items: center;
   display: flex;
-  // height: 360px;
   justify-content: center;
   position: relative;
 
   img {
-    // height: 360px;
     filter: brightness(70%);
     object-fit: fill;
   }
@@ -97,11 +103,43 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .slide-in {
+    opacity: 0;
+    animation: slideIn 3s forwards;
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
 @media (min-width: 768px) {
   section {
     height: 100vh;
   }
   .imageBox {
+    height: 100%;
+
+    picture,
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
     &__link {
       transform: rotate(270deg);
     }
@@ -115,67 +153,59 @@ a {
   }
 }
 
-/** Animation when the page loads - Place all elements on the viewport */
-//Galerie
-@keyframes galerie {
-  from {
-    transform: translateX(-100%);
-  }
-}
-.row .Galerie {
-  animation: galerie $time-animation;
-}
-
-// musiques
-@keyframes musiques {
-  from {
-    transform: translateX(100%);
-  }
-}
-.row .Musiques {
-  animation: musiques $time-animation;
-}
-
-//presentation
-@keyframes presentation {
-  from {
-    transform: translateX(-100%);
-  }
-}
-.row .Presentation {
-  animation: presentation $time-animation;
-}
-
-//Projets
-@keyframes projets {
-  from {
-    transform: translateX(100%);
-  }
-}
-.row .Projets {
-  animation: projets $time-animation;
-}
-
-//Instruments
-@keyframes instruments {
-  from {
-    transform: translateX(-100%);
-  }
-}
-.row .Instruments {
-  animation: instruments $time-animation;
-}
+// @keyframes galerie {
+//   from {
+//     transform: translateX(-100%);
+//   }
+// }
+// .row .Galerie {
+//   animation: galerie $time-animation;
+// }
+//
+// // musiques
+// @keyframes musiques {
+//   from {
+//     transform: translateX(100%);
+//   }
+// }
+// .row .Musiques {
+//   animation: musiques $time-animation;
+// }
+//
+// //presentation
+// @keyframes presentation {
+//   from {
+//     transform: translateX(-100%);
+//   }
+// }
+// .row .Presentation {
+//   animation: presentation $time-animation;
+// }
+//
+// //Projets
+// @keyframes projets {
+//   from {
+//     transform: translateX(100%);
+//   }
+// }
+// .row .Projets {
+//   animation: projets $time-animation;
+// }
+//
+// //Instruments
+// @keyframes instruments {
+//   from {
+//     transform: translateX(-100%);
+//   }
+// }
+// .row .Instruments {
+//   animation: instruments $time-animation;
+// }
 
 @media (min-width: 768px) {
-  .imageBox {
-    height: 100%;
+  /** Animation when the page loads - Place all elements on the viewport */
+  //Galerie
 
-    picture,
-    img {
-      object-fit: cover;
-      height: 100%;
-    }
-  }
   /** Animation when the page loads - Place all elements on the viewport */
   //Galerie
   @keyframes galerie {
