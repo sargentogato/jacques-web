@@ -11,9 +11,11 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+.row {
+  margin: 0;
+}
 .header {
   &__title {
-    position: absolute;
     color: white;
     font-size: $title-size-mobile;
     font-family: $title-fontFamily;
@@ -26,6 +28,7 @@ defineProps({
 @media (width > 767px) {
   .header {
     &__title {
+      position: absolute;
       font-size: $title-size-lg;
     }
   }

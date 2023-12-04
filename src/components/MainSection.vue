@@ -70,31 +70,15 @@ section {
   }
 }
 
-@media (width > 767px) {
-  .header {
-    &__title {
-      font-size: $title-size-lg;
-    }
-  }
-}
-
-@media (width > 1400px) {
-  .header {
-    &__title {
-      font-size: $title-size-xl;
-    }
-  }
-}
-
 .imageBox {
   align-items: center;
   display: flex;
-  height: 360px;
+  // height: 360px;
   justify-content: center;
   position: relative;
 
   img {
-    height: 360px;
+    // height: 360px;
     filter: brightness(70%);
     object-fit: fill;
   }
@@ -114,6 +98,21 @@ section {
     font-family: $subtitle-fontFamily;
     font-weight: bold;
     text-shadow: $text-shadow;
+  }
+}
+
+@media (min-width: 768px) {
+  .imageBox {
+    &__link {
+      transform: rotate(270deg);
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .imageBox {
+    &__link {
+      transform: rotate(0deg);
+    }
   }
 }
 
