@@ -51,10 +51,6 @@ a {
   text-decoration: none;
 }
 
-section {
-  height: 100vh;
-}
-
 .header {
   position: absolute;
   width: 100%;
@@ -102,6 +98,9 @@ section {
 }
 
 @media (min-width: 768px) {
+  section {
+    height: 100vh;
+  }
   .imageBox {
     &__link {
       transform: rotate(270deg);
