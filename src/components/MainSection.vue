@@ -86,7 +86,7 @@ a {
   }
 
   &__link {
-    border: 3px solid rgb(255, 255, 255);
+    border: $border-mobile;
     color: white;
     letter-spacing: 0.2em;
     position: absolute;
@@ -148,6 +148,7 @@ a {
 @media (min-width: 1200px) {
   .imageBox {
     &__link {
+      border: $border-desktop;
       transform: rotate(0deg);
     }
   }

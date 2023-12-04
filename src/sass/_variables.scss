@@ -13,7 +13,10 @@ $subtitle-size-desktop: 2.7rem;
 //Colors
 $title-color: white;
 
-//Shadows
+//Shadows and border
+$border-desktop: 3px solid rgb(255, 255, 255);
+$border-mobile: 1px dotted rgb(255, 255, 255);
+
 $negative-value: -1px;
 $postive-value: 1px;
 $text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.5), -1px -1px 1px rgb(0, 0, 0, 0.5),
