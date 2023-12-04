@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <HeaderMain :title="title" />
+    <HeaderMain :title="title" :imageText="imageText" />
     <SectionMain :imageText="imageText" @addModal="openModal($event)" />
     <Teleport to="#modal">
       <Modal :show="showModal" @close="showModal = false">

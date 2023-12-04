@@ -2,6 +2,7 @@
   <section class="row">
     <div
       class="imageBox col-12 col-md gap-0 p-0"
+      :class="imageText.lineOne"
       v-for="(imageText, index) in props.imageText"
       :key="index"
     >
@@ -22,7 +23,6 @@
       <a
         @click="addModal(imageText.lineOne)"
         class="imageBox__link slide-in"
-        :class="imageText.lineOne"
         :style="{
           animationDelay: `${index * 0.7}s`,
         }"
@@ -152,55 +152,6 @@ a {
     }
   }
 }
-
-// @keyframes galerie {
-//   from {
-//     transform: translateX(-100%);
-//   }
-// }
-// .row .Galerie {
-//   animation: galerie $time-animation;
-// }
-//
-// // musiques
-// @keyframes musiques {
-//   from {
-//     transform: translateX(100%);
-//   }
-// }
-// .row .Musiques {
-//   animation: musiques $time-animation;
-// }
-//
-// //presentation
-// @keyframes presentation {
-//   from {
-//     transform: translateX(-100%);
-//   }
-// }
-// .row .Presentation {
-//   animation: presentation $time-animation;
-// }
-//
-// //Projets
-// @keyframes projets {
-//   from {
-//     transform: translateX(100%);
-//   }
-// }
-// .row .Projets {
-//   animation: projets $time-animation;
-// }
-//
-// //Instruments
-// @keyframes instruments {
-//   from {
-//     transform: translateX(-100%);
-//   }
-// }
-// .row .Instruments {
-//   animation: instruments $time-animation;
-// }
 
 @media (min-width: 768px) {
   /** Animation when the page loads - Place all elements on the viewport */
